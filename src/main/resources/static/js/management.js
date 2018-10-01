@@ -215,7 +215,7 @@ app.controller('mapController', function($scope, $http) {
          },1000)
     };
 
-
+ //Deneme
 
     init();
 
