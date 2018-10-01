@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myApp">
+
+<div class="container-fluid" ng-controller="managementController">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6  offset-md-1 col-lg-6 offset-lg-1 col-xl-6">
+            <table class="table" id="mangerTable">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in managers" ng-click ="selectManager(x.id)">
+                    <td>{{ x.id }}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.lastname}}</td>
+                    <td>
+                        <button type='button' class="btn btn-danger" ng-click='deleteManagers(x.id)'>Delete</button>
+                        <button type='button' class="btn btn-success">Update</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" ng-click='saveManagers()' data-toggle="modal" data-target="#exampleModalLong">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" id="managerName" placeholder="Managername" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" id="managerPosition" placeholder="Managername" aria-label="Username" aria-describedby="basic-addon1">
+                            <button type='button' class="btn btn-success" id="saveManager">Save Manager</button></td>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <table class="table">
+                <thead  class="thead-dark">
+                <tr>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in employees">
+                    <td>{{x.id}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.lastname}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

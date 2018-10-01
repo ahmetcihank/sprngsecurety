@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AlByXfeMVhHMYRZc1pO2XKFgetPG_vyGK6vxR9H1Ys0oO5UN6U9Cr-vTU6Rqxnvo'>
+    </script>
+
+
+</head>
+
+
+<body ng-app="myApp">
+
+
+<div id="myMap"  style='height: 300px;' ng-init="load">
+
+</div>
+
+<div class="container-fluid" ng-controller="mapController">
+    <div class="row">
+        <div class=" col-sm-12 col-md-6 col-lg-6 ">
+            <table class="table" id="mangerTable">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in managers" ng-click ="SelectManager(x.name)">
+                    <td>{{x.name}}</td>
+                    <td>{{x.lastname}}</td>
+                    <td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <table class="table">
+                <thead  class="thead-dark">
+                <tr>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                    <th>Deneme</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in vehicles" ng-click="createPushpin(x.latitude,x.longitude)">
+                    <td>{{x.label}}</td>
+                    <td>{{x.location}}</td>
+                    <td>{{x.observer}}</td>
+                    <td>{{x.latitude}}</td>
+                    <td>{{x.longitude}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+</script>
+
+</body>
+
+</html>

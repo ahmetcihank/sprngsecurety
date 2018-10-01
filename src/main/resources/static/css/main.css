@@ -1,0 +1,14 @@
+table tbody, table thead
+{
+    display: block;
+}
+table tbody
+{
+    overflow: auto;
+    height: 350px;
+    width: 550px;
+}
+
+a{
+    color: aquamarine !important;
+}
